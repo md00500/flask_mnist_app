@@ -22,7 +22,7 @@ app.secret_key = "12345"
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-model = load_model('./model.h5')#学習済みモデルをロード
+model = load_model('./model.h5', compile=False)#学習済みモデルをロード
 
 
 @app.route('/', methods=['GET', 'POST'])
